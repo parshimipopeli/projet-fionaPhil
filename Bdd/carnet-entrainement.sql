@@ -17,14 +17,18 @@ CREATE TABLE IF NOT EXISTS `coureurs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `surname` varchar(255) NOT NULL,
-    `streetNumber` int(11)  NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+    `streetNumber` decimal  NOT NULL,
       `street` varchar(255) NOT NULL,
-        `country` varchar(255) NOT NULL,
+        `city` varchar(255) NOT NULL,
           `postalCode` int(11) NOT NULL,
   `birthdayDate` date NOT NULL,
   `creationDate` datetime DEFAULT NOW(),
   `updateDate` datetime DEFAULT NOW(),
   `deleteDate` datetime DEFAULT NULL,
+            `role` varchar(255),
+
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -47,4 +51,14 @@ CREATE TABLE IF NOT EXISTS `entrainement` (
   PRIMARY KEY (`id`),
     FOREIGN KEY (`idCoureur`) REFERENCES coureurs (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO coureurs  (name, surname, email, password, streetNumber, street, city, postalCode, birthdayDate) VALUES ('Lamorski', 'Philippe', 'philippe.lamorski@gmail.com', 'azerty', '29', 'la roseraie', 'Lapugnoy', '62122', '24/01/73');
+
+
+
+
+
+
+
 COMMIT;
+

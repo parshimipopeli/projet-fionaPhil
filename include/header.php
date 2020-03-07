@@ -13,8 +13,8 @@
 <body>
     <header>
         <div class="header col-12 d-md-flex   justify-content-between bg-dark" id="header">
-            <div class="logo col-2 col-lg-">
-                <img class="img-fluid logo" src="">
+            <div class="logo col-2 col-lg-4">
+                <img class="img-fluid Logo" src="img/Logo.png">
             </div>
             <div class="d-none  d-lg-block titre  col-lg-5 text-white align-self-center">
                 <h1 class="text-center">Carnet d'entrainement</h1>

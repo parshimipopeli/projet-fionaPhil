@@ -1,79 +1,70 @@
 <?php
-require_once '../header.php';
+require_once'../include/connectBdd.php';
+
+require_once '../include/header.php';
 ?>
-<section class="form-elegant pt-10 col-12 d-flex justify-content-center">
-
-  <!-- Grid row -->
-  <div class="">
-
-    <!-- Grid column -->
-    <div class="col-md-9 col-lg-12 col-xl-12">
-
-      <!--Form without header-->
-      <div class="card">
-
-        <div class="card-body mx-4">
-
-          <!--Header-->
-          <div class="text-center">
-            <h3 class="dark-grey-text mb-5"><strong>Sign up</strong></h3>
-          </div>
-
-          <!--Body-->
-          <div class="md-form">
-            <input type="text" id="Form-email1" class="form-control">
-            <label for="Form-email1">Your email</label>
-          </div>
-
-          <div class="md-form">
-            <input type="password" id="Form-pass1" class="form-control">
-            <label for="Form-pass1">Your password</label>
-          </div>
-
-          <div class="md-form pb-3">
-            <input type="search" id="form-autocomplete-1" class="form-control mdb-autocomplete">
-            <button class="mdb-autocomplete-clear">
-              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="https://www.w3.org/2000/svg">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-            </button>
-            <label for="form-autocomplete-1" class="active">Your country</label>
-          </div>
-
-          <div class="text-center mb-3">
-            <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign up</button>
-          </div>
-          <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign up
-            with:</p>
-
-          <div class="row my-3 d-flex justify-content-center">
-            <!--Facebook-->
-            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f blue-text text-center"></i></button>
-            <!--Twitter-->
-            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter blue-text"></i></button>
-            <!--Google +-->
-            <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g blue-text"></i></button>
-          </div>
-
+<div class="col-6 d-flex justify-content-center">
+<form id="add_user_form" action="../treatment/traitement.php" method="POST" class="mx-2">
+        <div class="d-md-flex">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <label for="surname">Prénom</label>
+                    <input type="text" class="form-control" id="surname" name="surname" placeholder="Prénom">
+                </div>
+                <div class="form-group">
+                    <label for="mail">Email</label>
+                    <input type="email" class="form-control" id="mail" name="email" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex">
+                    <div class="form-group col-2 pl-0 pr-1">
+                        <label for="street_number">N°</label>
+                        <input type="text" class="form-control" id="streetNumber" name="streetNumber" placeholder="N°">
+                    </div>
+                    <div class="form-group col-10 px-0">
+                        <label for="street_name">Nom de Rue</label>
+                        <input type="text" class="form-control" id="streetName" name="streetName" placeholder="Nom de Rue">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="postal_code">Code Postal</label>
+                    <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Code Postal">
+                </div>
+                <div class="form-group">
+                    <label for="city">Ville</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Ville">
+                </div>
+                <div class="form-group">
+                    <label for="city">Date de naissance</label>
+                    <input type="date" class="form-control" id="city" name="birthdayDate" placeholder="Date de naissance">
+                </div>
+                
+            </div>
         </div>
-
-        <!--Footer-->
-        <div class="modal-footer mx-5 pt-3 mb-1">
-          <p class="font-small grey-text d-flex justify-content-end">Already a member? <a href="#" class="blue-text ml-1">
-              Sign In</a></p>
+        <div class=" mx-2 d-flex justify-content-end">
+            <button id="btnInscription" name="registration" type="submit" class="btn text-dark font-weight-bold mb-5">S' inscrire</button>
         </div>
-
-      </div>
-      <!--/Form without header-->
-
-    </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Grid row -->
-
-</section>
+    </form>
 
 
-<?php require_once'../footer.php'?>
+
+
+
+
+
+
+
+
+
+</div>
+
+<?php require_once '../include/footer.php' ?>
