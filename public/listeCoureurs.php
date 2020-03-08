@@ -1,4 +1,5 @@
 <?php
+
 require_once'../include/connectBdd.php';
 require_once'../include/header.php';
 
@@ -42,23 +43,23 @@ $liste->execute();
                         <td class="pt-3-half" contenteditable="true"><?= $listes['city'] ?></td>
                         <td class="pt-3-half" contenteditable="true"><?= $listes['postalCode'] ?></td>
                         <td class="pt-3-half" contenteditable="true"><?= $listes['birthdayDate'] ?></td>
-
+                        <td>
+                    <a class="" href="../treatment/deleteCoureur.php?id=<?= $listes['id'] ?>">
+                        <button type="button" class="btn btn-danger deleteQuestions">Supprimer</button>
+                    </a>
+                </td>
+                <td>
+                    <a class="" target="#exampleModal" href="../treatment/updateCoureur.php?id=<?= $listes['id'] ?>">
+                        <button type="button" data-toggle="modal" data-target="#myModal"class="btn btn-secondary deleteQuestions">Modifier</button>
+                    </a>
+                </td>
 
                         
-                        <td>
-                <button name="delete" data-id="<?= $donnees['id'] ?>" value="delete" name="delete" class="btn btn-danger delete">
-                    Supprimer
-                </button>
-                <button name="update" data-id="<?= $donnees['id'] ?>" value="update" name="update" class="btn btn-success delete">
-                    Modifier
-                </button>
-            </td>
-            <input type="hidden" name="id" id="idDelete" value="">
-            <input type="hidden" name="action-delete" id="action-delete" value="delete_contacts">
+
+                       
                         
                         <?php
                         }
-
                        
 ?>
                         
@@ -67,11 +68,4 @@ $liste->execute();
         </div>
 
 
-        <?php
-         $id =($_GET['id']);
-         if(isset($_POST["delete"])) {
-         
-         $req = $bdd->prepare("DELETE  FROM coureurs WHERE id = " . $id);
-         $req->execute();
-                    header('LOCATION: messages.php');
-         }
+        

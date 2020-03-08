@@ -18,11 +18,13 @@
             </div>
             <div class="d-none  d-lg-block titre  col-lg-5 text-white align-self-center">
                 <h1 class="text-center">Carnet d'entrainement</h1>
-
             </div>
 
-            <div class="connection col-1 col-lg-3 align-self-center ">
+            <div class="connection col-1 col-lg-2 align-self-center ">
                 <button class="btn btn-secondary">Connection</button>
+            </div>
+            <div class="index col-1 col-lg-1 align-self-center">
+                <a class="text-white" type="button" class="btn btn-secondary" href="/index.php">Acceuil</a>
             </div>
         </div>
         </div>
