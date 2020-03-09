@@ -11,6 +11,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/cssLogin.css">
+
+
 
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -26,10 +31,10 @@
             </div>
 
             <div class="connection col-1 col-lg-2 align-self-center ">
-                <button class="btn btn-secondary">Connection</button>
+                <a class="btn btn-secondary text-white" type="button" href="../exerciceCrud/public/login.php">Connection</a>
             </div>
             <div class="index col-1 col-lg-1 align-self-center">
-                <a class="text-white" type="button" class="btn btn-secondary" href="../index.php">Acceuil</a>
+                <a  type="button" class="btn btn-secondary text-white" href="../index.php">Acceuil</a>
             </div>
         </div>
         </div>
