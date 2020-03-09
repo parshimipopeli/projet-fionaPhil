@@ -1,3 +1,17 @@
+<?php session_start(); 
+if ($_SESSION['role'] == 'entraineur') {
+    header('Location:../public/listeCoueurs.php');
+    # code...
+}elseif ($_SESSION['role'] == 'coureur') {
+    header('Location:ajoutEntrainement.php');
+    # code...
+}else{
+    header('Location:../index.php');
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -24,8 +38,8 @@
                 <button class="btn btn-secondary">Connection</button>
             </div>
             <div class="index col-1 col-lg-1 align-self-center">
-                <a class="text-white" type="button" class="btn btn-secondary" href="/index.php">Acceuil</a>
+                <a class="text-white" type="button" class="btn btn-secondary" href="../index.php">Acceuil</a>
             </div>
         </div>
         </div>
-    </header>
+    </header>   

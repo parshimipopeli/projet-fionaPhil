@@ -48,7 +48,7 @@ $liste->execute();
                         </td>
                         <td>
                             <a class="btn btn-success" type="button"
-                                href="../treatment/updateCoureur.php?id=<?= $listes['id'] ?>">
+                                href="../public/update.php?id=<?= $listes['id'] ?>">
                                 Modifier
                             </a>
                         </td>
