@@ -3,7 +3,7 @@ require_once'../include/connectBdd.php';
  require_once'../include/header.php';
 
 $id = intval($_GET['id']);
-$reponse = $bdd->prepare('SELECT * From coureurs WHERE id = ' . $id);
+$reponse = $bdd->query('SELECT * From coureurs WHERE id = ' . $id);
 $reponse->execute();
 $donnees = $reponse->fetch()
 

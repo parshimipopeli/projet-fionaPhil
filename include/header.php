@@ -1,17 +1,8 @@
-<?php session_start(); 
-if ($_SESSION['role'] == 'entraineur') {
-    header('Location:../public/listeCoueurs.php');
-    # code...
-}elseif ($_SESSION['role'] == 'coureur') {
-    header('Location:ajoutEntrainement.php');
-    # code...
-}else{
-    header('Location:../index.php');
-}
 
 
 
-?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 

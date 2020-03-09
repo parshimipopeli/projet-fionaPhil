@@ -28,7 +28,7 @@ require_once '../include/header.php';
                 <div class="d-flex">
                     <div class="form-group col-2 pl-0 pr-1">
                         <label for="street_number">N°</label>
-                        <input type="text" class="form-control" id="streetNumber" name="streetNumber" placeholder="N°">
+                        <input type="number" class="form-control" id="streetNumber" name="streetNumber" placeholder="N°">
                     </div>
                     <div class="form-group col-10 px-0">
                         <label for="street_name">Nom de Rue</label>
@@ -37,7 +37,7 @@ require_once '../include/header.php';
                 </div>
                 <div class="form-group">
                     <label for="postal_code">Code Postal</label>
-                    <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Code Postal">
+                    <input type="number" class="form-control" id="postalCode" name="postalCode" placeholder="Code Postal">
                 </div>
                 <div class="form-group">
                     <label for="city">Ville</label>
