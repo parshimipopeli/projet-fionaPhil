@@ -25,7 +25,6 @@ $sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
   $result =   $sth->execute();
 
 
-    echo "Entrée ajoutée dans la table";
 }
 
 

@@ -12,29 +12,39 @@ $donnees = $reponse->fetch();
 
 if (isset($_POST['update'])) {
 
-// $id = ($_GET['id']);
+ $id = ($_GET['id']);
 
 
 
-$requete = $bdd->prepare("UPDATE coureurs SET name = :name, surname = :surname, email = :$mail, streetNumber = :streetNumber, streetName = :street, postalCode = :postalCode', city = :city, birthdayDate = :$birthday WhERE id =". $id);
+    $req = ("UPDATE coureurs SET name = :name, surname = :surname, email = :email, streetNumber = :streetNumber, street = :street, postalCode = :postalCode, city = :city, birthdayDate = :birthday WhERE id = :id");
 
 
+    $name = htmlspecialchars($_POST['name']);
+    $surname = htmlspecialchars($_POST['surname']);
+    $email = htmlspecialchars($_POST['email']);
+    $streetNumber = htmlspecialchars($_POST['streetNumber']);
+    $street = htmlspecialchars($_POST['street']);
+    $postalCode = htmlspecialchars($_POST['postalCode']);
+    $city = htmlspecialchars($_POST['city']);
+    $birthdayDate = htmlspecialchars($_POST['birthdayDate']);
 
+//$sth = $bdd->prepare($req);
+//    var_dump($sth);
+//
+////La constante de type par défaut est STR
+//$sth->bindParam(':name', $_POST['name']);
+//$sth->bindParam(':surname', $_POST['surname']);
+//$sth->bindParam(':email', $_POST['email']);
+//$sth->bindParam(':streetNumber', $_POST['streetNumber']);
+//$sth->bindParam(':street', $_POST['streetName']);
+//$sth->bindParam(':postalCode', $_POST['postalCode']);
+//$sth->bindParam(':city', $_POST['city']);
+//$sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
+//$result = $sth->execute();
+    $result = $bdd->prepare($req);
+    $result->execute([':name' => $name, ':surname' => $surname, ':email' => $email, ':streetNumber' => $streetNumber, ':street' => $street, ':postalCode' => $postalCode, ':city' => $city, ':birthday' => $birthdayDate ,':id' => $id]);
+    var_dump($result->errorInfo());
 
-$password =  password_hash($_POST['password'] , PASSWORD_DEFAULT);
-
-$sth = $bdd->prepare($requette);
-//La constante de type par défaut est STR
-$sth->bindParam(':name', $_POST['name']);
-$sth->bindParam(':surname', $_POST['surname']);
-$sth->bindParam(':email', $_POST['email']);
-$sth->bindParam(':password', $password);
-$sth->bindParam(':streetNumber', $_POST['streetNumber']);
-$sth->bindParam(':street', $_POST['streetName']);
-$sth->bindParam(':postalCode', $_POST['postalCode']);
-$sth->bindParam(':city', $_POST['city']);
-$sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
-  $result =   $sth->execute(); 
     header("Location:../public/listeCoureurs.php");
 }
 ?>
@@ -48,11 +58,11 @@ $sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
                 </div>
                 <div class="form-group">
                     <label for="surname">Prénom</label>
-                    <input type="text" value="<?= $donnees['surname'] ?>"" class="form-control" id="surname" name="surname" placeholder="Prénom">
+                    <input type="text" value="<?= $donnees['surname'] ?>" class="form-control" id="surname" name="surname" placeholder="Prénom">
                 </div>
                 <div class="form-group">
                     <label for="mail">Email</label>
-                    <input type="email" value="<?= $donnees['email'] ?>"" class="form-control" id="mail" name="email" aria-describedby="emailHelp" placeholder="Email">
+                    <input type="email" value="<?= $donnees['email'] ?>" class="form-control" id="mail" name="email" aria-describedby="emailHelp" placeholder="Email">
                 </div>
             </div>
             <div class="col-md-6">
@@ -63,7 +73,7 @@ $sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
                     </div>
                     <div class="form-group col-10 px-0">
                         <label for="street_name">Nom de Rue</label>
-                        <input type="text" value="<?= $donnees['street'] ?>" class="form-control" id="streetName" name="streetName" placeholder="Nom de Rue">
+                        <input type="text" value="<?= $donnees['street'] ?>" class="form-control" id="streetName" name="street" placeholder="Nom de Rue">
                     </div>
                 </div>
                 <div class="form-group">
@@ -72,11 +82,11 @@ $sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
                 </div>
                 <div class="form-group">
                     <label for="city">Ville</label>
-                    <input type="text" value="<?= $donnees['city'] ?>"class="form-control" id="city" name="city" placeholder="Ville">
+                    <input type="text" value="<?= $donnees['city'] ?>"class="form-control" id="" name="city" placeholder="Ville">
                 </div>
                 <div class="form-group">
                     <label for="city">Date de naissance</label>
-                    <input type="date" value="<?= $donnees['birthdayDate'] ?>" class="form-control" id="city" name="birthdayDate" placeholder="Date de naissance">
+                    <input type="date" value="<?= $donnees['birthdayDate'] ?>" class="form-control" id="" name="birthdayDate" placeholder="Date de naissance">
                 </div>
 
             </div>
