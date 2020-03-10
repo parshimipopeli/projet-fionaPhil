@@ -14,20 +14,27 @@ if (isset($_POST['update'])) {
 
 // $id = ($_GET['id']);
 
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $mail = $_POST['email'];
-    $pwd = $_POST['password'];
-    $streetNumber = $_POST['streetNumber'];
-    $street = $_POST['streetName'];
-    $city = $_POST['city'];
-    $postalCode = $_POST['postalCode'];
-    $birthday = $_POST['birthdayDate'];
-    
 
 
-$requete = $bdd->prepare("UPDATE coureurs SET name = '$name', surname = '$surname', email = '$mail', streetNumber = '$streetNumber', streetName = '$street', postalCode = '$postalCode', city = '$city', birthdayDate = '$birthday' WhERE id =". $id);
-    $requete->execute();
+$requete = $bdd->prepare("UPDATE coureurs SET name = :name, surname = :surname, email = :$mail, streetNumber = :streetNumber, streetName = :street, postalCode = :postalCode', city = :city, birthdayDate = :$birthday WhERE id =". $id);
+
+
+
+
+$password =  password_hash($_POST['password'] , PASSWORD_DEFAULT);
+
+$sth = $bdd->prepare($requette);
+//La constante de type par défaut est STR
+$sth->bindParam(':name', $_POST['name']);
+$sth->bindParam(':surname', $_POST['surname']);
+$sth->bindParam(':email', $_POST['email']);
+$sth->bindParam(':password', $password);
+$sth->bindParam(':streetNumber', $_POST['streetNumber']);
+$sth->bindParam(':street', $_POST['streetName']);
+$sth->bindParam(':postalCode', $_POST['postalCode']);
+$sth->bindParam(':city', $_POST['city']);
+$sth->bindParam(':birthdayDate', $_POST['birthdayDate']);
+  $result =   $sth->execute(); 
     header("Location:../public/listeCoureurs.php");
 }
 ?>
