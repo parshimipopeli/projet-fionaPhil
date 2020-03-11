@@ -10,17 +10,17 @@ $warning='';
 <div class="simple-login-container">
     <div class="row">
         <div class="col-md-12 form-group">
-            <input type="text" class="form-control" placeholder="entrer votre email">
+            <input type="text"name="email" class="form-control" placeholder="entrer votre email">
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 form-group">
-            <input type="password" placeholder="Entrer votre mot de passe" class="form-control">
+            <input type="password" name="password" placeholder="Entrer votre mot de passe" class="form-control">
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 form-group">
-            <input type="submit" class="btn btn-block btn-login" placeholder="Enter your Password" >
+            <input type="submit" name="login" class="btn btn-block btn-login" placeholder="Enter your Password" >
         </div>
     </div>
     <div class="row">
